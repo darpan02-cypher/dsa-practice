@@ -9,14 +9,14 @@ class Solution:
         result = ''
         # Step 2: Loop through each string in the list
         for s in strs:
-            # Step 3: Add the string and a '#' separator to the result
-            result += s + '#'
+            # Step 3: Add the string and a '#' separator to the result for identification later
+            result += s + '#'   #or result= result + s + #
         # Step 4: Return the final encoded string
         return result
 
     def decode(self, decode_str: str) -> List[str]:
         # Split the string by the special character to get the original strings
-        return decode_str.split('#')[:-1]
+        return decode_str.split('#')[:-1]  #spliting by '#' and removing the last empty string as it will be added after the last string
 
 
 solution= Solution()
