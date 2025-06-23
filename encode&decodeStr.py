@@ -35,3 +35,27 @@ Recover the exact original list from that string (decode)'''
 #explaination of above code in steps-
 # 1. The `encode` method takes a list of strings and joins them into a single string, appending a special character (`#`) after each string.
 # 2. The `decode` method splits the encoded string by the special character to retrieve the original list of strings.
+
+
+###########################
+#Bonus safe version
+###########################
+'''class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        # Store each string as: length_of_string + '#' + string
+        return ''.join(f"{len(s)}#{s}" for s in strs)
+
+    def decode(self, s: str) -> List[str]:
+        res = []
+        i = 0
+        while i < len(s):
+            j = i
+            # Move j to find the separator #
+            while s[j] != '#':
+                j += 1
+            length = int(s[i:j])          # Get the length
+            res.append(s[j+1:j+1+length]) # Extract the string
+            i = j + 1 + length            # Move to next block
+        return res
+'''
