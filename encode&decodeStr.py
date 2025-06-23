@@ -1,7 +1,7 @@
 from typing import List
 #Design an algorithm to encode a list of strings to a single string. The encoded string is then decoded back to the original list of strings.
 
-class Solution:
+class Solution:     #this solution was not accepted , but below then this code is accepted solution because it is safe and does not use any special character to join the strings
 
     def encode(self, strs: List[str]) -> str:
         # Join the strings with a special character that won't appear in the strings
@@ -38,17 +38,30 @@ Recover the exact original list from that string (decode)'''
 
 
 ###########################
-#Bonus safe version
+#Bonus safe version -- accepted solution
 ###########################
 '''class Solution:
 
     def encode(self, strs: List[str]) -> str:
         # Store each string as: length_of_string + '#' + string
-        return ''.join(f"{len(s)}#{s}" for s in strs)
+        # Step 1: For each string, get its length and concatenate with '#' and the string itself
+        encoded_pieces = []  # List to hold encoded pieces
+        for s in strs:
+            length = len(s)
+            encoded_piece = f"{length}#{s}"
+            encoded_pieces.append(encoded_piece)
+        # Step 2: Join all encoded pieces into a single string
+        return ''.join(encoded_pieces)
+        #return ''.join(f"{len(s)}#{s}" for s in strs)
+
 
     def decode(self, s: str) -> List[str]:
-        res = []
+        res = []  # List to hold decoded strings
         i = 0
+        # Step 3: Iterate through the encoded string to extract each piece
+        # Step 4: Use a while loop to find each encoded piece
+        # Step 5: Extract the length and the string based on the separator '#'
+        # Step 6: Append the extracted string to the result list
         while i < len(s):
             j = i
             # Move j to find the separator #
