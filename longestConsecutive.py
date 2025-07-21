@@ -1,12 +1,21 @@
 from typing import List
 
-#O(n^2) solution
+#O(nlogn) solution
 """
-1.Pick a no from list (nums)
-2. Keep it in Temp[] array as seen no
-3.Comparenewly picked from nums & compare with other as nums[i]=num[j]+1 or num[i]==num[j]-1
-4.If this no. matches &not in tem[] , then append it to temp[]
+Explanation of O(n^2) solution:
+1. If the input list 'nums' is empty:
+    a. Return 0
+2. Sort the list 'nums' to arrange numbers in ascending order.
+3. Initialize 'longest_streak' to 1 to track the longest sequence found.
+4. Initialize 'current_streak' to 1 to track the current sequence length.
+5. Iterate through the sorted list starting from the second element:
+    a. If the current number is equal to the previous number, skip it (to avoid duplicates).
+    b. If the current number is one more than the previous number, increment 'current_streak'.
+    c. Otherwise, update 'longest_streak' with the maximum of 'longest_streak' and 'current_streak', and reset 'current_streak' to 1.
+6. After the loop, return the maximum of 'longest_streak' and 'current_streak' to account for the last sequence.
+
 """
+
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         if not nums:
@@ -26,7 +35,6 @@ class Solution:
                 current_streak = 1  # Reset streak for new sequence
 
         return max(longest_streak, current_streak)  # Final check for the last streak
-
 
 
 
