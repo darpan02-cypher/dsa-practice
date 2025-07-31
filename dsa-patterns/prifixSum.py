@@ -4,7 +4,7 @@
 # First - Single Query - i.e. find the sum of elements in a subarray from index i to j
 
 def find_subarray_sum(array, i, j):
-    subarray_sum=0
+    subarray_sum=0 #using extra variable to store the sum of the subarray
 
     for i in range(i, j+1):  #j+1 to include the element at index j
         subarray_sum += array[i]
@@ -19,8 +19,21 @@ result = find_subarray_sum(array, i, j)
 print(f"Sum of elements from index {i} to {i+j-1} is: {result}")
 # Output: Sum of elements from index 1 to 3 is: 9
 
+#without creating extra variable and space
+def find_subarray_sum_no_extra_space(array, i, j):
+    for i in range (1, len(array)):
+        array[i] += array[i - 1]
+    return array
+# Example usage without extra variable
+array = [1, 2, 3, 4, 5]
+i = 1  # Starting index
+j = 3  # Ending index
+result = find_subarray_sum_no_extra_space(array, i, j)
+print(f"Sum of elements from index {i} to {i+j-1} is: {result[j] - result[i-1]}")
+# Output: Sum of elements from index 1 to 3 is: 9
 
-# Second - Multiple Queries - i.e. find the sum of elements in a subarray from index i to j for multiple queries
+
+# Second - Multiple Queries - i.e., find the sum of elements in a subarray from index i to j for multiple queries
 def find_subarray_sum_multiple_queries(array, queries):
     prefix_sum = [0] * (len(array) + 1)  # Create a prefix sum array
 
