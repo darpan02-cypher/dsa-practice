@@ -1,5 +1,5 @@
 from typing import List
-######################## O(n) ---faster then above solution
+######################## O(n) ---faster then below solution
 '''
 class Solution:
     def twoSum(self, nums, target):
