@@ -6,17 +6,18 @@ class Solution:
         #window_sum=sum(prices[:k])
         seen = {}
         profit =0
-        min_price = prices[0]
+        min_price = prices[0] # Initialize min_price to the first price in the list
 
         for i, price in enumerate (prices):
-            #the index compared must be greater then the index of min_price becoz selling date can be only after buying date is the logic
+            # Update min_price if the current price is lower than the previously recorded min_price 
             if price < min_price:
                 min_price = price
+            #else, calculate the potential profit by selling at the current price and buying at the min_price, and update the max profit if this potential profit is greater than the previously recorded max profit
             else:
                 diff = price - min_price
                 profit= max(profit, diff)
 
-                seen[diff] = i
+                seen[diff] = i # Store the index of the current price in the seen dictionary with the potential profit as the key
 
         return profit
     
