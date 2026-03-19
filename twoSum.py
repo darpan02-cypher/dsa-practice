@@ -1,5 +1,6 @@
 from typing import List
 ######################## O(n) ---faster then below solution
+#Optimal Approach → HashMap (that is dictionary in Python) as it allows us to check if the complement (target - current number) exists in O(1) time. We can iterate through the list once, storing each number and its index in the dictionary. For each number, we check if its complement is already in the dictionary. If it is, we have found our two numbers and can return their indices. This approach has a time complexity of O(n) and a space complexity of O(n) due to the dictionary storing the numbers and their indices.
 '''
 class Solution:
     def twoSum(self, nums, target):
