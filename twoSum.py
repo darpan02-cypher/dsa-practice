@@ -16,6 +16,7 @@ class Solution:
 
 
 ################### O(n^2) ---brute force solution
+#this approach is using two nested loops to check every possible pair of numbers in the list. The outer loop iterates through each number, while the inner loop checks the subsequent numbers for a match that sums up to the target. If a pair is found, their indices are returned. This approach has a time complexity of O(n^2) due to the nested loops, and a space complexity of O(1) since we are not using any additional data structures.
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)):
