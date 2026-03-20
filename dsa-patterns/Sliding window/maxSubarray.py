@@ -2,6 +2,13 @@
 # The algorithm works by iterating through the array and keeping track of the current sum of the subarray being considered. 
 # If the current sum becomes negative, it is reset to zero, as a negative sum would not contribute to a maximum sum in future iterations. 
 # The maximum sum is updated whenever a new maximum is found. 
+#____________________________________________________
+#It is an O(n) solution to the Maximum Subarray Problem
+
+#Instead of checking all subarrays (O(n²)), it does this:
+
+#“At every index, decide — should I extend the current subarray or start fresh?”
+
 def max_subarray(arr):
     max_sum = float('-inf') # Initialize max_sum to the smallest possible value to handle cases where all elements are negative
     current_sum = 0
