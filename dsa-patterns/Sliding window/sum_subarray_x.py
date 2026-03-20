@@ -1,6 +1,7 @@
 #Count Subarrays of Size K with Sum = X
 
 #Adds condition checking
+#Fixed window
 
 def sum_subarray_x(arr, k, x):
     window_sum = sum(arr[:k])  # here arr[:k] is the first window of size k
