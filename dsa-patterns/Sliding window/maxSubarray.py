@@ -25,3 +25,18 @@ def max_subarray(arr):
 arr = [-2,1,-3,4,-1,2,1,-5,4]
 result = max_subarray(arr)
 print("Maximum subarray sum is:", result)
+
+#below is also correct solution
+'''
+     def maxSubArray(self, nums: List[int]) -> int:
+        max_so_far = nums[0]
+        current_max = nums[0]
+    
+        for i in range(1, len(nums)):
+        # Either start a new window at nums[i] or add it to current window
+            current_max = max(nums[i], current_max + nums[i])
+            max_so_far = max(max_so_far, current_max)
+        
+        return max_so_far
+'''
+
