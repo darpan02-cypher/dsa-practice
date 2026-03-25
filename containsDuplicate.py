@@ -20,3 +20,13 @@ print(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))  # Output
 #step 3- if the lengths are different, it means there are duplicates in the original list, so return True
 #step 4- if the lengths are the same, it means there are no duplicates in the original list, so return False
 
+#--------O(n) using a set to track seen numbers
+def containsDuplicate(nums) -> bool:
+    seen = set()  # Create an empty set to track seen numbers
+
+    for num in nums:  # Iterate through each number in the input list
+        if num in seen:  # Check if the number is already in the seen set
+            return True  # If it is, we have a duplicate, so return True
+        seen.add(num)  # Otherwise, add the number to the seen set
+
+    return False  # If we finish iterating without finding duplicates, return False
