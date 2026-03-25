@@ -1,10 +1,13 @@
 def containsDuplicate(nums)->bool:
-    my_set =set(nums)
+    #seen = {} #if trying with dictionary then it will store both key andvalue
+        my_set=set(nums) #withset it will only store unique element and search complexity -O(1) , while list search complexity is O(n)
 
-    if len(nums) != len(my_set):
-        return True
-    else:
-        return False
+
+        if len(nums)!=len(my_set): #if lenght of both not same then there is a duplicate existing in list
+            return True
+
+        else:
+            return False # if the lenght is same then there isn't any duplicate 
     
 # Test cases
 print(containsDuplicate([1, 2, 3, 1]))  # Output
