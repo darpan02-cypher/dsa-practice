@@ -13,3 +13,10 @@ def containsDuplicate(nums)->bool:
 print(containsDuplicate([1, 2, 3, 1]))  # Output
 print(containsDuplicate([1, 2, 3, 4]))  # Output
 print(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))  # Output
+
+#pseaudo code
+#step 1- create a set from the input list, which will store only unique elements
+#step 2- compare the length of the original list with the length of the set
+#step 3- if the lengths are different, it means there are duplicates in the original list, so return True
+#step 4- if the lengths are the same, it means there are no duplicates in the original list, so return False
+
