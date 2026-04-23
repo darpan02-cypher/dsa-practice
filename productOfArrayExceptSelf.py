@@ -23,5 +23,22 @@ solution = Solution()
 nums = [1, 2, 4, 6]
 print(solution.productOfArrayxceptSelf(nums))  # Output: [48,24,12,8]   
 
-    
-       
+#simple explanation: with pseudo code:
+# The function calculates the product of all elements in the list except the current element for each position
+# It does this by first calculating the product of all elements to the left of each position, and then multiplying it with the product of all elements to the right of that position.
+#---------------------------------------****_-----------------------------
+#Pseudo code:
+# Initialize result array with 1s
+# Calculate prefix products:
+#     Initialize prefix_product to 1
+#     For each element in the input array:
+#         Store the current prefix_product in the result array at the current index
+#         Update prefix_product by multiplying it with the current element
+# Calculate suffix products and multiply with prefix products:
+#     Initialize suffix_product to 1
+#     For each element in the input array (iterating from the end to the start):
+#         Multiply the current result in the result array with suffix_product
+#         Update suffix_product by multiplying it with the current element
+# Return the result array
+#----------------------------------------****_-----------------------------
+#we choose res as array ...
