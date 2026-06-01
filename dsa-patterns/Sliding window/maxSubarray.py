@@ -1,6 +1,6 @@
 #Kadane's algo - DP- It is used to find the maximum sum of a contiguous subarray in an array of integers. 
 # The algorithm works by iterating through the array and keeping track of the current sum of the subarray being considered. 
-# If the current sum becomes negative, it is reset to zero, as a negative sum would not contribute to a maximum sum in future iterations. 
+# If the current sum becomes negative, it is reset to zero, as a negative sum would not contribute to a maximum sum in future iterations as well.- ** Remember this **
 # The maximum sum is updated whenever a new maximum is found. 
 #____________________________________________________
 #It is an O(n) solution to the Maximum Subarray Problem
