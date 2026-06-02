@@ -40,7 +40,7 @@ print(fib(10)) # should return 55
 
 def fib(n):
    #step 1 - create a table to store the Fibonacci values up to n -- we can alos use two variables to store the last two Fibonacci numbers instead of an array or dictionary
-    memo = [0] * (n + 1)  # Initialize a list to store Fibonacci values up to n
+    memo = [0] * (n + 1)  # "create a list containing n + 1 elements, where every single element is initialized to the number 0."
     memo[1] = 1  # Base case: F(1) = 1
     
         # Guard clauses for edge cases
@@ -52,3 +52,19 @@ def fib(n):
     return memo[n]  # Return the nth Fibonacci number
 #example usage
 print(fib(10)) # should return 55
+
+
+'''
+
+# used memo as dict in botom up approach
+def fib(n):
+    memo = {0: 0, 1: 1}  # Base cases
+    
+    if n in memo:
+        return memo[n]
+    
+    for i in range(2, n + 1):
+        memo[i] = memo[i - 1] + memo[i - 2]
+    
+    return memo[n]
+'''
