@@ -13,5 +13,8 @@ class Solution:
 #example usage
 solution = Solution()
 print(solution.climbStairs(5)) # should return 8
-dp1=[0] * (3 )
-print(dp1)
+
+#Note - In DP, dp[i] usually answers the question: "What is the solution for a size of i?" > Because we want to know the solution for size n, and arrays start counting at 0, the array must have n + 1 elements.
+    
+
+
