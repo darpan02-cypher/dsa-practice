@@ -12,9 +12,9 @@ def fib(n):
 '''
 #dp approach - top-down memoizatio
 
-#step 1 - create a memoization dictionary to store previously computed values
+#step 1 - create a memoization dictionary to store previously computed values, create on the outside of the function so that it persists across function calls
     memo = {}  
-def fib(n):
+def fib(n): #define the function to compute the nth Fibonacci number - isthis signature of top down approach different from bottom up approach? - no, the function signature can be the same for both approaches, but the implementation will differ. In the top-down approach, we use recursion and memoization to compute the Fibonacci numbers, while in the bottom-up approach, we use an iterative method to fill a table of Fibonacci numbers up to n.
 
    
 
