@@ -1,10 +1,12 @@
 arr = [] # Empty array initialization
 
+arr1 = [0] * 5 # Array of size 5 initialized with zeros
+
 freq = {} # Empty dictionary initialization
 
-seen = set() 
+seen = set() # Empty set initialization or hashset initialization
 
-stack = [] #
+stack = [] # Empty stack initialization, in python we can use list as stack
 
 from collections import deque
 queue = deque() 
