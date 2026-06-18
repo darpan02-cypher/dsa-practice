@@ -1,7 +1,7 @@
 #Kadane's algo - DP- It is used to find the maximum sum of a contiguous subarray in an array of integers. 
 # The algorithm works by iterating through the array and keeping track of the current sum of the subarray being considered. 
 # If the current sum becomes negative, it is reset to zero, as a negative sum would not contribute to a maximum sum in future iterations as well.- ** Remember this **
-# The maximum sum is updated whenever a new maximum is found. 
+# The maximum sum is updated whenever a new maximum is found. ....is it as a negative sum or negative number encountered? - it is a negative sum encountered, because if we encounter a negative number, we can still have a positive sum in future iterations, but if we encounter a negative sum, then we cannot have a positive sum in future iterations. So we reset the current sum to 0 when we encounter a negative sum.
 #____________________________________________________
 #It is an O(n) solution to the Maximum Subarray Problem
 
@@ -29,12 +29,12 @@ print("Maximum subarray sum is:", result)
 #below is also correct solution
 '''
      def maxSubArray(self, nums: List[int]) -> int:
-        max_so_far = nums[0]
-        current_max = nums[0]
+        max_so_far = nums[0] # Initialize max_so_far to the first element of the array to handle cases where all elements are negative
+        current_max = nums[0] 
     
         for i in range(1, len(nums)):
         # Either start a new window at nums[i] or add it to current window
-            current_max = max(nums[i], current_max + nums[i])
+            current_max = max(nums[i], current_max + nums[i]). #
             max_so_far = max(max_so_far, current_max)
         
         return max_so_far
