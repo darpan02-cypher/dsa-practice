@@ -44,6 +44,13 @@ class Solution:
         for i in range(2, len(nums)):
             # For each house, decide whether to rob it (and add its value to the maximum from two houses back)
             # or skip it (and take the maximum from the previous house)
-            dp[i] = max(dp[i-1], nums[i] + dp[i-2])
+            dp[i] = max(dp[i-1], nums[i] + dp[i-2])        #dp[i-1], # skip current house
+                                                           #nums[i] + dp[i-2] # rob current house
         
-        return dp[-1] # -1 as we want the last element which contains the maximum amount that can be robbed from all houses ,,,,, can we use dp[i] here? - no we cannot use dp[i] here because we are outside the loop and dp[i] would be out of bounds, we need to return the last element of the dp array which is dp[-1] or dp[len(nums)-1] both are correct.
+        return dp[-1] # -1 as we want the last element which contains the maximum amount that can be robbed from all houses ,,,,, 
+        # can we use dp[i] here? - no we cannot use dp[i] here because we are outside the loop and dp[i] would be out of bounds, we need to return the last element of the dp array which is dp[-1] or dp[len(nums)-1] both are correct.
+
+
+#example usage:
+solution = Solution()
+print(solution.rob([1, 2, 3, 1]))  # Output: 4  
