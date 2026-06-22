@@ -53,3 +53,28 @@ solution = Solution()
 print(solution.rob([2, 3, 2]))  # Output: 3
 print(solution.rob([1, 2, 3, 1]))  # Output: 4
 print(solution.rob([1, 2, 3]))  # Output:       4
+
+
+#-------space optimization using dp variable instead of dp arrays as we only need the last two values to calculate the next value in this approach
+'''
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 0: return 0
+        if len(nums) == 1: return nums[0]
+        if len(nums) == 2: return max(nums[0], nums[1])
+
+        # Scenario 1: Rob first house and skip last house
+        prev2, prev1 = nums[0], max(nums[0], nums[1])
+        for i in range(2, len(nums) - 1):
+            current = max(prev1, nums[i] + prev2)
+            prev2, prev1 = prev1, current
+        result1 = prev1
+
+        # Scenario 2: Skip first house and rob last house
+        prev2, prev1 = nums[1], max(nums[1], nums[2])
+        for i in range(3, len(nums)):
+            current = max(prev1, nums[i] + prev2)
+            prev2, prev1 = prev1, current
+        result2 = prev1
+
+        return max(result1, result2)
+'''
