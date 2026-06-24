@@ -4,13 +4,16 @@ def bfs(graph, start_node):
     visited.add(start_node)
 
     while queue:
-        current_node = queue.pop(0) # Dequeue a node from the front of the queue - this will process nodes in a breadth-first manner
+        current_node = queue.pop(0) # Dequeue a node from the front of the queue - this will process nodes in a breadth-first manner (FIFO)
         print(current_node)
 
-        for neighbor in graph[current_node]:
+        # Check all unvisited neighbors
+        for neighbor in graph[current_node]: # Iterate through each neighbor of the current node
             if neighbor not in visited:
                 visited.add(neighbor)
-                queue.append(neighbor)
+                queue.append(neighbor) #  Add to back
+
+   
 
 # Example usage:
 if __name__ == "__main__":
