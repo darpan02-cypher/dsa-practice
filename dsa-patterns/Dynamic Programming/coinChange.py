@@ -53,15 +53,15 @@ Pseudocode:
 #------------------------------DFS - Recuresion with memoization-----------------------------
 def coinChange(self, coins: List[int], amount: int) -> int:
 
-        def dfs(amount):
-            if amount == 0:
-                return 0
+        def dfs(amount): #helper/ recursive function
+            if amount == 0: return 0
 
-            res = 1e9
+            res = 1e9 #1e9 is a large number to represent infinity
             for coin in coins:
                 if amount - coin >= 0:
-                    res = min(res, 1 + dfs(amount - coin))
+                    res = min(res, 1 + dfs(amount - coin)) 
             return res
 
-        minCoins = dfs(amount)
+        minCoins = dfs(amount) 
         return -1 if minCoins >= 1e9 else minCoins
+#the time comple
