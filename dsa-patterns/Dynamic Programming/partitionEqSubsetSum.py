@@ -1,6 +1,6 @@
 from typing import List
 
-
+#Catch: If you can find even one subset whose sum is exactly half of the total sum, then the remaining elements automatically form the other subset with the same sum.
 def partitionEqSubsetSum(nums: List[int]) -> bool:
 
     
