@@ -8,7 +8,7 @@ def max_sum_subarray(arr ,k):
 
     #slide the window 
     for i in range(k, len(arr)):
-        window_sum=window_sum -arr[i-k] + arr[i]  # remove the first element of the previous window and add the next element in the current windo
+        window_sum=window_sum -arr[i-k] + arr[i]  # remove the first element of the previous window and add the next element in the current window
         max_sum=max(max_sum, window_sum) #update the max sum if the current window sum is greater
     return max_sum
 
