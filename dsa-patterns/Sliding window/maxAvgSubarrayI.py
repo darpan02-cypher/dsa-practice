@@ -2,8 +2,8 @@ from git import List
 
 
 def maxAvgSubarry(nums:List[int], k:int) -> float:
-    n = len(nums)
-    if n < k:
+    n = len(nums) 
+    if n < k: # If the length of the array is less than k, return 0.0 as we cannot form a subarray of size k
         return 0.0
 
     window_sum = sum(nums[:k])
