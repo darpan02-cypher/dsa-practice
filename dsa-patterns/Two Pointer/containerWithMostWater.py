@@ -8,7 +8,9 @@ class Solution:
         left, right = 0, len(heights) - 1
         max_area = 0
 
-        while left < right:
+        #while left < right: 
+        # OR
+        for i in range(len(heights)-1):
             width = right - left
             current_area = min(heights[left], heights[right]) * width
             max_area = max(max_area, current_area)
