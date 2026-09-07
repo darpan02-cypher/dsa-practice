@@ -9,8 +9,8 @@ def longestSubstringUniq(s: str):
 
 
     for right in range(len(s)):
-        while s[right] in seen:
-            seen.remove(s[left])
+        while s[right] in seen: #this while loop will run until we find a character that is not in the seen set, at which point we can add the new character to the set and continue expanding the window. This ensures that we always have a substring with unique characters. 
+            seen.remove(s[left])  # 
             left+=1
 
 
@@ -28,3 +28,9 @@ print(f"The length of the longest substring without repeating characters in '{s}
 #Complexity - O(n) for both time and space:
 # though we are using nested while loop, the inner while loop will run at most n times in total across all iterations of the outer for loop. This is because each character is added and removed from the set at most once. Therefore, the overall time complexity is O(n). The space complexity is also O(n) due to the storage of characters in the set.
 # is the time complexity O(n) even because of lookup of set? Yes, the average time complexity for lookups in a set is O(1), which means that even with the lookup operation, the overall time complexity remains O(n).
+
+
+#easy to remember approach: in short
+#1. Initialize a set to keep track of seen characters, and two pointers (left and right) to represent the current window of unique characters.
+#2. Iterate through the string with the right pointer, expanding the window by adding characters to the set.
+#3. If a character is already in the set, move the left pointer to the right until the character is removed from the set, ensuring that the window contains only unique characters.     
