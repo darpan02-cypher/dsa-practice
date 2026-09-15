@@ -31,6 +31,17 @@ class Solution:
         
                     r += 1
                 return output
+
+    #easy to remember pseudocode for the above approach:
+    # 1. Initialize an empty deque and an empty list for the output.
+    # 2. Use two pointers, l and r, to represent the left and right edges of the sliding window.
+    # 3. Iterate through the array with the right pointer r
+    # 4. For each element nums[r], remove elements from the back of the deque if they are smaller than nums[r].
+    # 5. Add the index r to the deque
+    # 6. If the front of the deque is out of the current window (i.e., deq[0] < l), remove it from the front of the deque.
+    # 7. If we have filled at least one window (i.e., r + 1 >= k), append the maximum element (nums[deq[0]]) to the output
+    # 8. Move the left pointer l to the right to slide the window.      
+
         
 
 '''
