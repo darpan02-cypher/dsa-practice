@@ -19,8 +19,11 @@ if result is not None:
 else:
     print("Not enough unique elements to determine the second largest number.")
 
-    #Optimal approach with time complexity of O(n) and space complexity of O(1)
+    #Optimal approach with time complexity of O(n) and space complexity of O(1) using two variables to track the largest and second largest numbers.
 def secondLargestOptimal(nums):
+    if len(nums) < 2:
+        return "Array should have at least two numbers"
+    
     first = second = float('-inf')  # Initialize first and second to negative infinity
 
     for num in nums:
@@ -29,9 +32,11 @@ def secondLargestOptimal(nums):
             first = num              # Update first to be the current number
         elif first > num > second:   # If current number is between first and second
             second = num             # Update second to be the current number
-
-    return second if second != float('-inf') else None  # Return None if no second largest found
-
+        
+    if second != float('-inf'):
+        return second  
+    else:
+        return "No second largest number found"  
 # Example usage:
 nums = [3, 1, 4, 4, 5, 2]
 result = secondLargestOptimal(nums)
