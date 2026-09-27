@@ -10,7 +10,7 @@ def longestSubstringUniq(s: str):
 
     for right in range(len(s)):
         while s[right] in seen: #this while loop will run until we find a character that is not in the seen set, at which point we can add the new character to the set and continue expanding the window. This ensures that we always have a substring with unique characters. 
-            seen.remove(s[left])  # 
+            seen.remove(s[left]) #we are removing left so that we can move the left pointer to the right and continue expanding the window with unique characters. This is necessary because we want to maintain a substring with unique characters, and if we encounter a duplicate character, we need to remove it from the set and move the left pointer to the right until we have a substring with unique characters again.
             left+=1
 
 
