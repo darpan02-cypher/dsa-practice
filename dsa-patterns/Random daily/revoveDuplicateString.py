@@ -10,3 +10,7 @@ def removeDuplicateString(s):
     return ''.join(unique_chars)
 
 #time complexity is O(n) where n is the length of the string
+#example usage
+input_string = "hello world"
+result = removeDuplicateString(input_string)
+print(f"The string after removing duplicates is: {result}")

@@ -1,6 +1,6 @@
 def removeDuplicates(arr):
     # Create a set to store unique elements
-    unique_elements = set()
+    unique_elements = set() #or () to create an empty set
     
     # Iterate through the array and add elements to the set
     for element in arr:
