@@ -6,7 +6,7 @@ def mergeSort(nums1, nums2):
     p2 = len(nums2)-1
     k = len(nums1) + len(nums2) - 1  # Pointer for the end of merged array
     # Extend nums1 to accommodate nums2
-    nums1.extend([0] * len(nums2))
+    nums1.extend([0] * len(nums2)) #do we require this step? yes, because we need to make sure that nums1 has enough space to accommodate all elements from nums2. If we don't extend nums1, we might run into index errors when trying to assign values to it.
     # Merge in reverse order
     while p2 >= 0: # this loop will run until all elements of nums2 are merged into nums1
         if p1 >= 0 and nums1[p1] > nums2[p2]: # if the current element in nums1 is greater than the current element in nums2
