@@ -2,11 +2,11 @@ arr = [] # Empty array initialization
 
 arr1 = [0] * 5 # Array of size 5 initialized with zeros
 
-freq = {} # Empty dictionary initialization
+freq = {} # Empty dictionary initialization #use it when you want to store key-value pairs and check for membership in O(1) time
 
-seen = set() # Empty set initialization or hashset initialization
+seen = set() # Empty set initialization or hashset initialization #use it when you want to store unique elements and check for membership in O(1) time
 
-stack = [] # Empty stack initialization, in python we can use list as stack
+stack = [] # Empty stack initialization, in python we can use list as stack #use it when you want to store elements in LIFO order and perform push/pop operations in O(1) time
 
 from collections import deque
 queue = deque() 
@@ -64,12 +64,11 @@ s = "hello"
 # s[0] = 'H' ❌
 
 # Build strings efficiently
-chars = []
+chars = [] #this is a list of characters, we can append to it and then join to form a string as result = "".join(chars) #this is the efficient way to build strings in python
 chars.append("a")
 chars.append("b")
 
-result = "".join(chars)
-
+result = "".join(chars)  # join list of characters back into a string
 
 # =====================================================
 # 3. HASHMAP / DICTIONARY
