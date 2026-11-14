@@ -29,3 +29,5 @@ ll.append(1)  # Append values to the linked list
 ll.append(2)
 ll.append(3)    
 ll.display()  # Display the linked list
+
+#the time and space complexity of this implementation is O(n) where n is the number of nodes in the linked list.

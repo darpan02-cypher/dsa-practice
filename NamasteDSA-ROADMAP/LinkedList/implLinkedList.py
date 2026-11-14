@@ -27,3 +27,4 @@ while current is not None: # Step 4: Traverse the linked list until the end
 # 3. Link the nodes together
 # 4. Traverse the linked list
 
+#the time and space compelxity of this implementation is O(n) where n is the number of nodes in the linked list.
